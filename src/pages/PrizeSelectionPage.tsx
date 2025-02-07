@@ -58,7 +58,7 @@ const PrizeSelectionPage: React.FC = () => {
     );
 
     try {
-      const response = await fetch('http://13.212.247.100/add_waste_prize', {
+      const response = await fetch('https://vendo-api-render2.vercel.app/add_waste_prize', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -92,7 +92,7 @@ const PrizeSelectionPage: React.FC = () => {
     const checkResponse = async () => {
       try {
         const pollResponse = await fetch(
-          `http://13.212.247.100/check_sensor_response/${recordId}`
+          `https://vendo-api-render2.vercel.app/check_sensor_response/${recordId}`
         );
         const pollData = await pollResponse.json();
 
@@ -128,7 +128,7 @@ const PrizeSelectionPage: React.FC = () => {
   };
 
   const updateStatus = async (recordId: number, status: string): Promise<void> => {
-    await fetch(`http://13.212.247.100/update_status/${recordId}`, {
+    await fetch(`https://vendo-api-render2.vercel.app/update_status/${recordId}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ Status: status }),
